@@ -19,7 +19,7 @@
 -->
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="cordova-plugin-console"
+           id="Console"
       version="1.0.7-dev">
 
     <name>Console</name>
@@ -46,82 +46,9 @@
             <clobbers target="cordova.logger" />
         </js-module>
 
-	<header-file src="src/ios/CDVLogger.h" />
-	<source-file src="src/ios/CDVLogger.m" />
+        <header-file src="src/ios/CDVLogger.h" />
+        <source-file src="src/ios/CDVLogger.m" />
 
-    </platform>
-
-    <!-- ubuntu -->
-    <platform name="ubuntu">
-        <js-module src="www/console-via-logger.js" name="console">
-            <clobbers target="console" />
-        </js-module>
-
-        <js-module src="www/logger.js" name="logger">
-            <clobbers target="cordova.logger" />
-        </js-module>
-
-        <header-file src="src/ubuntu/console.h" />
-        <source-file src="src/ubuntu/console.cpp" />
-
-    </platform>
-
-    <!-- wp7 -->
-    <platform name="wp7">
-        <config-file target="config.xml" parent="/*">
-            <feature name="Console">
-                <param name="wp-package" value="DebugConsole"/>
-            </feature>
-        </config-file>
-
-        <js-module src="www/console-via-logger.js" name="console">
-            <clobbers target="console" />
-        </js-module>
-
-        <js-module src="www/logger.js" name="logger">
-            <clobbers target="cordova.logger" />
-        </js-module>
-
-        <source-file src="src/wp/DebugConsole.cs" />
-    </platform>
-
-    <!-- wp8 -->
-    <platform name="wp8">
-        <config-file target="config.xml" parent="/*">
-            <feature name="Console">
-                <param name="wp-package" value="DebugConsole"/>
-            </feature>
-        </config-file>
-
-        <js-module src="www/console-via-logger.js" name="console">
-            <clobbers target="console" />
-        </js-module>
-
-        <js-module src="www/logger.js" name="logger">
-            <clobbers target="cordova.logger" />
-        </js-module>
-
-        <source-file src="src/wp/DebugConsole.cs" />
-    </platform>
-
-    <!-- windows8 -->
-    <platform name="windows8">
-        <js-module src="www/logger.js" name="logger">
-            <clobbers target="cordova.logger" />
-        </js-module>
-        <js-module src="www/console-via-logger.js" name="console">
-            <clobbers target="console" />
-        </js-module>
-    </platform>
-
-    <!-- Windows universal platform -->
-    <platform name="windows">
-        <js-module src="www/logger.js" name="logger">
-            <clobbers target="cordova.logger" />
-        </js-module>
-        <js-module src="www/console-via-logger.js" name="console">
-            <clobbers target="console" />
-        </js-module>
     </platform>
 
 </plugin>
